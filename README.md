@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 nextjs-BackEnd
 
-## Getting Started
+A full-stack application connecting **Next.js** with **MongoDB** via **Node.js**, using the App Router and API Routes to handle backend logic directly within the Next.js framework.
 
-First, run the development server:
+---
+
+## 🛠️ Tech Stack
+
+| Layer      | Technology                         |
+|------------|------------------------------------|
+| Frontend   | Next.js 14+ (App Router), React    |
+| Language   | TypeScript                         |
+| Styling    | CSS / Tailwind CSS                 |
+| Backend    | Node.js (via Next.js API Routes)   |
+| Database   | MongoDB                            |
+| Linting    | ESLint                             |
+
+---
+
+## 📁 Project Structure
+
+```
+nextjs-BackEnd/
+├── app/                  # App Router pages and API routes
+│   └── api/              # Backend endpoints (Node.js handlers)
+├── public/               # Static assets
+├── .gitignore
+├── eslint.config.mjs     # ESLint configuration
+├── next.config.ts        # Next.js configuration
+├── postcss.config.mjs    # PostCSS configuration
+├── tsconfig.json         # TypeScript configuration
+└── package.json
+```
+
+---
+
+## ⚙️ Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) `v18+`
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- A [MongoDB](https://www.mongodb.com/) database (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YanPrudencio015/nextjs-BackEnd.git
+cd nextjs-BackEnd
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Configure environment variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+MONGODB_DB=your_database_name
+```
+
+> 💡 If using **MongoDB Atlas**, get your connection string from the cluster dashboard under **Connect → Drivers**.
+
+### 4. Run the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔌 API Routes
 
-## Learn More
+API endpoints are defined inside the `app/api/` directory using Next.js Route Handlers. Example:
 
-To learn more about Next.js, take a look at the following resources:
+```
+GET  /api/example   → Fetches data from MongoDB
+POST /api/example   → Inserts data into MongoDB
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Each route connects to MongoDB using the connection string defined in `.env.local`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🏗️ Build for Production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ☁️ Deploy on Vercel
+
+The easiest way to deploy this app is via [Vercel](https://vercel.com/new):
+
+1. Push the repository to GitHub
+2. Import the project on Vercel
+3. Add your environment variables (`MONGODB_URI`, `MONGODB_DB`) in the **Environment Variables** section
+4. Deploy 🚀
+
+---
+
+## 📚 Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Next.js App Router](https://nextjs.org/docs/app)
+- [MongoDB Node.js Driver](https://www.mongodb.com/docs/drivers/node/current/)
+- [MongoDB Atlas](https://www.mongodb.com/atlas)
+
+---
+
+## 👤 Author
+
+**Yan Prudencio**  
+GitHub: [@YanPrudencio015](https://github.com/YanPrudencio015)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
